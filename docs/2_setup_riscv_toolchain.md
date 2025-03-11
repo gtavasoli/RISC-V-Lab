@@ -26,7 +26,7 @@ cd riscv-gnu-toolchain
 ```
 > **Note**: This step will take a long time due to the large size of the repository (More than 9GB).
 
-##### **2.2.1: Build the Toolchain for RISC-V**
+#### **2.1. Build the Toolchain for RISC-V**
 To build the toolchain for **RV64GC (64-bit general-purpose RISC-V ISA)**, run:
 ```bash
 ./configure --prefix=/opt/riscv --enable-multilib
@@ -34,14 +34,14 @@ make -j$(nproc)
 ```
 > **Note**: This step will take a long time (~1 hour, depending on your system).
 
-##### **2.2.2: Add Toolchain to PATH**
+#### **2.2. Add Toolchain to PATH**
 Once the toolchain is built, update your `PATH` environment variable:
 ```bash
 echo 'export PATH=/opt/riscv/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-#### **2.3: Verify the Installation**
+#### **3. Verify the Installation**
 After installation, check if the toolchain is working:
 ```bash
 riscv64-unknown-elf-gcc --version
