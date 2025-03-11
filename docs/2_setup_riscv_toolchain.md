@@ -38,6 +38,7 @@ make -j$(nproc)
 Once the toolchain is built, update your `PATH` environment variable:
 ```bash
 echo 'export PATH=/opt/riscv/bin:$PATH' >> ~/.bashrc
+echo "export RISCV=/root/riscv" >> ~/.bashrc
 source ~/.bashrc
 ```
 
