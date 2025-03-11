@@ -1,4 +1,4 @@
-## **Install the RISC-V Toolchain**
+## **Setting Up the RISC-V Toolchain**
 
 The RISC-V toolchain consists of several components, including:
 - **GNU Toolchain (GCC, Binutils, GDB, etc.)** – for compiling and debugging RISC-V programs.
