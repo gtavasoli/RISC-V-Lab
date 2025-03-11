@@ -21,20 +21,29 @@ RISC-V Lab aims to provide a hands-on experience in working with the **RISC-V BO
 The repository is structured to provide a step-by-step guide to setting up the environment, running simulations, and executing test programs on the BOOM core. It also includes detailed instructions for running security experiments to understand the impact of Spectre attacks on RISC-V cores.
 
 ## Getting Started
-
+Refer to the setup guides and instructions available in separate documents for:
+- Installing dependencies
+- Setting up the RISC-V toolchain
+- Configuring and running simulations with **Chipyard**
+- Executing test programs on BOOM
 
 ## Setup
-
+Detailed installation and configuration instructions are available in:
+- `docs/setup.md`: Installing the RISC-V toolchain and Chipyard
+- `docs/configuration.md`: Configuring and running simulations
 
 ## Usage
-
+To run basic tests and simulations, refer to:
+- `docs/usage.md`: Running BOOM simulations and executing test binaries
+- `docs/spectre.md`: Running security experiments on BOOM
 
 ## Troubleshooting
-
+For common issues and solutions, check:
+- `docs/troubleshooting.md`: Fixes for common installation and execution problems
 
 ## Contributing
-
+Contributions are welcome! See `CONTRIBUTING.md` for details on how to contribute.
 
 ## License
-
+This repository is licensed under the MIT License.
 
