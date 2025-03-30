@@ -80,7 +80,6 @@ The following script (`build-setup.sh`) will complete a “full” installation 
 Run the following command to initialize Chipyard’s environment:
 ```bash
 cd ~/chipyard
-# ./build-setup.sh riscv-tools -s 1 -s 3 -s 4 -s 6 -s 7 -s 8 -s 9
 ./build-setup.sh riscv-tools 
 echo 'export PATH=~/chipyard/tools/circt/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
@@ -94,6 +93,7 @@ cd ~/chipyard/sims/verilator
 make CONFIG=LargeBoomV3Config
 ```
 
+### Execute sample code
 
 ```bash
 mv hello.c hello.c.original
@@ -124,7 +124,6 @@ void main() {
 
 ```bash
 cd ~/chipyard/tests
-# x86_64-conda-linux-gnu-c++
 riscv64-unknown-elf-gcc -static -mcmodel=medany -fvisibility=hidden   -nostdlib -nostartfiles   -T ~/chipyard/toolchains/riscv-tools/riscv-isa-sim/debug_rom/link.ld   hello.c -o hello.riscv
 ```
 
