@@ -133,3 +133,80 @@ Run the RISC-V binary on BOOM using Verilator:
 cd ~/chipyard/sims/verilator
 make CONFIG=LargeBoomV3Config run-binary BINARY=../../tests/hello.riscv
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## **Step 1: Install Proxy Kernel (`riscv-pk`)**
+Run the following commands to clone and build `riscv-pk`:
+
+```bash
+cd ~/chipyard
+git clone --recursive https://github.com/riscv-software-src/riscv-pk.git
+cd riscv-pk
+mkdir build
+cd build
+../configure --prefix=/opt/riscv --host=riscv64-unknown-elf --with-arch=rv64gc
+make -j$(nproc)
+sudo make install
+```
+## **Step 3: Recompile "Hello, World!"**
+Now that `riscv-pk` is installed, recompile `hello.c`:
+```bash
+cd ~/chipyard/tests
+riscv64-unknown-elf-gcc -o hello.riscv hello.c -static -march=rv64gc -mabi=lp64d -I/opt/riscv/include
+```
+
+Verify that the file was created:
+```bash
+ls -l hello.riscv
+```
+If the file exists, you are ready to run it on BOOM.
+
+---
+
+## **Step 4: Run the Test on BOOM**
+Run the RISC-V binary on BOOM using Verilator:
+```bash
+cd ~/chipyard/sims/verilator
+make CONFIG=LargeBoomV3Config run-binary BINARY=../../tests/hello.riscv
+```
+
+
+### **3.6: Run a Simulation (BOOM + Spike)**
+To verify that the BOOM processor is correctly set up, you can run a simple simulation:
+```bash
+cd ~/chipyard/sims/verilator
+make CONFIG=LargeBoomConfig run-binary BINARY=../../tests/hello.riscv
+```
+If everything is correct, you should see the **"Hello, World!"** output from the simulated BOOM processor.
+
+---
+
+### **Next Steps**
+1. Confirm that BOOM is set up successfully by checking the simulation output.
+2. Let me know once this step is completed so we can move on to **setting up and running the Spectre attacks on BOOM**.
